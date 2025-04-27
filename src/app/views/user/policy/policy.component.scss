@@ -1,0 +1,45 @@
+@import "../../../../assets/styles/variables";
+.policy {
+  padding: 30px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+
+  ol ol{
+    margin-top: 10px;
+    counter-reset: subsection;
+    list-style-type: none;
+
+    li {
+      display: block;
+      margin-bottom: 5px;
+
+      &::before {
+        margin-right: 15px;
+        counter-increment: subsection;
+        content: "1." counter(subsection);
+      }
+    }
+  }
+  .policy-back {
+    display: flex;
+    justify-content: center;
+
+    button {
+      font-family: 'Montserrat', sans-serif;
+      color: $darkblue-text-color;
+      font-size: 18px;
+      border: 1px solid $darkblue-text-color;
+      border-radius: 5px;
+      padding: 5px;
+      background:transparent;
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(185, 213, 253, 1.00) ;
+      }
+    }
+  }
+
+}

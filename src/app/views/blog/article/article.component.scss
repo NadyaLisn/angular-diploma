@@ -1,0 +1,172 @@
+@import "../../../../assets/styles/variables";
+
+.article {
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  .container {
+    .article-pre-title {
+      margin-bottom: 60px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      a {
+        color: #B9D5FDFF;
+        font-weight: 400;
+        span {
+          color: #B9D5FDFF;
+          font-weight: 400;
+        }
+      }
+
+      span {
+        color: $blue-text-color;
+        font-weight: 500;
+        margin-left: 9px;
+      }
+    }
+
+    .article-main {
+      .article-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .article-head-title {
+          max-width: 607px;
+          h2 {
+            margin-bottom: 40px;
+          }
+
+          .article-head-description {
+            font-family: 'Montserrat', sans-serif;
+            color: $blue-text-color;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 130%;
+          }
+        }
+
+        .article-head-image {
+          width: 527px;
+          height: 320px;
+          background-size: cover;
+          background-position: top;
+        }
+      }
+
+      .article-body {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding-top: 60px;
+
+        .article-body-text {
+          max-width: 855px;
+
+          .article-body-text-item {
+            max-width: 855px;
+            padding-bottom: 61px;
+            color: $darkblue-text-color;
+
+          }
+
+          .article-social {
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: $blue-text-color;
+            margin-bottom: 61px;
+
+            span, a {
+              margin-right: 20px;
+            }
+          }
+
+          .article-comments {
+            h2 {
+              margin-bottom: 20px;
+            }
+
+            .article-comments-title2 {
+              font-family: 'Montserrat', sans-serif;
+              font-size: 14px;
+              font-weight: 400;
+              margin-bottom: 40px;
+              a {
+                color: $blue-text-color;
+              }
+            }
+
+            .article-comments-write {
+              padding-bottom: 40px;
+              textarea {
+                width: 818px;
+                height: 248px;
+                padding: 20px;
+                font-family: 'Montserrat',sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 130%;
+                color:$darkblue-text-color;
+                margin-bottom: 20px;
+                box-sizing: border-box;
+                border: 2px solid $blue-text-color;
+                border-radius: 3px;
+                background: #FFFFFFFF;
+
+                &::placeholder {
+                  color: rgb(168, 171, 167);
+                }
+              }
+
+              button.button {
+                width: 422px;
+                height: 51px;
+              }
+            }
+
+            .article-comments-items {
+              padding-top: 20px;
+
+
+              .article-comments-load {
+                color: rgb(112, 159, 220);
+                font-family: 'Montserrat', sans-serif;
+                font-size: 20px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                span {
+                  margin-right: 10px;
+                }
+              }
+            }
+          }
+
+        }
+
+        .related-articles {
+          padding-top: 60px;
+
+          .related-articles-head {
+            color: $blue-text-color;
+            font-family: 'Lora', serif;
+            font-size: 26px;
+            font-weight: 400;
+            margin-bottom: 20px;
+          }
+
+          .related-articles-items {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+          }
+        }
+      }
+    }
+  }
+}

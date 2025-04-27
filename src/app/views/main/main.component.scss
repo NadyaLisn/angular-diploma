@@ -1,0 +1,446 @@
+@import "../../../assets/styles/variables";
+
+.main {
+  margin-bottom: 125px;
+
+  .container {
+    .main-banners {
+      position: relative;
+
+      .main-banners-arrows {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        width: 100%;
+        top: calc(50% - 14px);
+        z-index: 999;
+
+        .arrow {
+          cursor: pointer;
+        }
+
+        .prev-arrow {
+          margin-left: 11px;
+        }
+
+        .next-arrow {
+          margin-right: 11px;
+        }
+      }
+
+      .main-banner {
+        position: relative;
+        padding: 100px 0 86px 80px;
+
+        .main-banner-background {
+          position: absolute;
+          right: 0;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          overflow: hidden;
+          z-index: -1;
+
+          .main-banner-background-circle {
+            position: absolute;
+            width: 1405px;
+            height: 1405px;
+            background-color: rgba(185, 213, 253, 1.00);
+            border-radius: 50%;
+            top: -145%;
+            left: -57%;
+            z-index: 1;
+          }
+
+          .main-banner-background-image {
+            width: 750px;
+            height: 500px;
+            top: 0;
+            right: 0;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+          }
+        }
+
+        .main-banner-content {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 302px;
+          z-index: 5;
+
+          .main-banner-content-info {
+            .main-banner-title1 {
+              color: $blue-text-color;
+              font-family: 'Montserrat', sans-serif;
+              font-size: 12px;
+              font-weight: 600;
+              line-height: 130%;
+              letter-spacing: 5px;
+              text-align: left;
+              text-transform: uppercase;
+            }
+
+            .main-banner-title2 {
+              font-family: 'Lora', serif;
+              font-size: 50px;
+              font-weight: 400;
+              line-height: 130%;
+              color: rgb(255, 255, 255);
+              max-width: 610px;
+
+              .selection {
+                color: rgba(112, 159, 220, 1.00);
+              }
+            }
+
+
+            .main-banner-description {
+              margin-top: 20px;
+              color: rgb(255, 255, 255);
+              font-family: 'Montserrat', sans-serif;
+              font-size: 24px;
+              font-weight: 400;
+              line-height: 130%;
+              max-width: 456px;
+            }
+          }
+
+          .main-banner-button {
+            button.button {
+              width: 163px;
+              height: 51px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.services {
+  padding-bottom: 114px;
+
+  .container {
+    h2 {
+      margin-bottom: 40px;
+    }
+
+    .services-cards {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      gap: 25px;
+    }
+  }
+
+}
+
+.main-about {
+  padding-bottom: 120px;
+
+  .container {
+    display: flex;
+    align-items: end;
+
+    .about-image {
+      max-width: 460px;
+      margin-right: 68px;
+    }
+
+    .about {
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .about-description {
+        max-width: 633px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 130%;
+        color: rgb(30, 26, 43);
+        margin-bottom: 40px;
+
+        span {
+          font-weight: 500;
+        }
+      }
+
+      .about-advantages {
+        .about-advantages-title {
+          font-family: 'Lora', serif;
+          font-size: 26px;
+          font-weight: 400;
+          color: $blue-text-color;
+          margin-bottom: 20px;
+        }
+
+        .about-advantages-items {
+          display: grid;
+          grid-template-columns: repeat(2, 315px);
+          column-gap: 71px;
+          row-gap: 20px;
+
+          .about-advantages-item {
+            display: flex;
+            align-items: center;
+
+
+            .about-advantage-circle {
+              position: relative;
+              border-radius: 50%;
+              width: 40px;
+              height: 40px;
+              background-color: rgb(185, 213, 253);
+              margin-right: 20px;
+
+              .about-advantage-number {
+                position: absolute;
+                top: -20px;
+                left: 8px;
+                color: rgb(112, 159, 220);
+                font-family: 'Lora', sans-serif;
+                font-size: 50px;
+                font-weight: 500;
+              }
+            }
+
+            .about-advantage-description {
+              max-width: 250px;
+              color: rgb(30, 26, 43);
+              font-family: 'Montserrat', sans-serif;
+              font-size: 14px;
+              font-weight: 400;
+
+              span {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.best-articles {
+  padding-bottom: 120px;
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  .best-articles-items {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .best-articles-link {
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      cursor: pointer;
+
+      span {
+        color: $blue-text-color;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin-right: 14px;
+      }
+    }
+  }
+}
+
+.reviews {
+  padding-bottom: 120px;
+  .container {
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+  .reviews-carousel {
+    position: relative;
+
+    .review-item {
+      width: 396px;
+      height: 267px;
+      padding: 30px;
+      box-sizing: border-box;
+      border: 2px solid $blue-text-color;
+      border-radius: 5px;
+
+      .review-item-head {
+        display: flex;
+        align-items: center;
+
+        .review-item-image {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background-position: center;
+          background-size: cover;
+          margin-right: 26px;
+        }
+
+        .review-item-name {
+          color: $blue-text-color;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+
+      .review-item-text {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 16px;
+        color: $darkblue-text-color;
+        font-size: 16px;
+        line-height: 140%;
+        font-weight: 400;
+      }
+    }
+    .reviews-arrows {
+      display: flex;
+      a {
+        top: calc(50% - 5px);
+        display: flex;
+        position: absolute;
+        cursor: pointer;
+
+        &.move-backward {
+          left: -41px;
+        }
+        &.move-forward {
+          right: -41px;
+        }
+      }
+    }
+  }
+}
+
+.reviews {
+  padding-bottom: 120px;
+  .container {
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+  .reviews-carousel {
+    position: relative;
+
+    .review-item {
+      width: 396px;
+      height: 267px;
+      padding: 30px;
+      box-sizing: border-box;
+      border: 2px solid $blue-text-color;
+      border-radius: 5px;
+
+      .review-item-head {
+        display: flex;
+        align-items: center;
+
+        .review-item-image {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background-position: center;
+          background-size: cover;
+          margin-right: 26px;
+        }
+
+        .review-item-name {
+          color: $blue-text-color;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+
+      .review-item-text {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 16px;
+        color: $darkblue-text-color;
+        font-size: 16px;
+        line-height: 140%;
+        font-weight: 400;
+      }
+    }
+    .reviews-arrows {
+      display: flex;
+      a {
+        top: calc(50% - 5px);
+        display: flex;
+        position: absolute;
+        cursor: pointer;
+
+        &.move-backward {
+          left: -41px;
+        }
+        &.move-forward {
+          right: -41px;
+        }
+      }
+    }
+  }
+}
+
+.info{
+  padding-bottom: 120px;
+
+
+  .container {
+    display: flex;
+
+    .map {
+      margin-right: 26px;
+    }
+
+    .contacts {
+      h2 {
+        margin-top: 5px;
+        margin-bottom: 20px;
+      }
+
+      .contacts-head {
+        color: $blue-text-color;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      .contacts-text {
+        color: $darkblue-text-color;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 130%;
+        max-width: 501px;
+        margin-bottom: 20px;
+
+        a {
+          color: $darkblue-text-color;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+
+      .contacts-social {
+        display: flex;
+        a {
+          margin-right: 20px;
+        }
+      }
+    }
+
+  }
+}

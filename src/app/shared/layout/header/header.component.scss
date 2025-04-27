@@ -1,0 +1,80 @@
+@import "../../../../assets/styles/variables";
+
+
+header.header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a img {
+      width: 85px;
+      height: 47px;
+    }
+
+    .header-menu {
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+
+        li {
+          list-style: none;
+          margin-right: 30px;
+
+          &.active {
+            a {
+              color: $blue-text-color;
+            }
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: $darkblue-text-color;
+          }
+        }
+      }
+    }
+
+    .header-phone {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: $blue-text-color;
+    }
+
+    .header-login {
+
+
+      .button-login {
+        display: flex;
+        align-items: center;
+
+        svg {
+          margin-right: 7px;
+        }
+
+        span {
+          cursor: pointer;
+          color: $darkblue-text-color;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 500;
+          font-size: 16px;
+
+        }
+
+      }
+
+    }
+  }
+}

@@ -1,0 +1,62 @@
+//@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 292px;
+  height: 100%;
+  min-height: 570px;
+  position: relative;
+
+  .article-card-content {
+    margin-bottom: 15px;
+
+    .article-card-image {
+      width: 291px;
+      height: 291px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .article-card-category {
+      position: absolute;
+      top: 10px;
+      right: 9px;
+
+      padding: 10px 18px;
+      border-radius: 5px;
+      background: #FFFFFF;
+
+      font-size: 11px;
+      text-align: center;
+      color: $blue-text-color;
+    }
+
+    .article-card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 130%;
+      color: $blue-text-color;
+      margin-bottom: 20px;
+    }
+
+    .article-card-description {
+      color: $darkblue-text-color;
+      font-size: 14px;
+      line-height: 130%;
+    }
+  }
+
+  .article-card-link a {
+    font-size: 16px;
+    color: $blue-text-color;
+    text-underline-offset: 2px;
+    cursor: pointer;
+  }
+}

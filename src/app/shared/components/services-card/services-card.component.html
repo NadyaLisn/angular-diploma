@@ -1,0 +1,19 @@
+<div class="services-card" *ngFor="let card of services">
+  <div class="services-card-content" >
+    <div  class="services-card-image" style="background-image: url('/assets/images/pages/{{card.image}}')"></div>
+    <div class="services-card-title">
+      {{card.title}}
+    </div>
+    <div class="services-card-description">
+      {{card.description}}
+    </div>
+  </div>
+  <div  class="services-card-info">
+    <div class="services-card-info-price">
+      От {{card.price}}&#8381;
+    </div>
+    <div class="services-card-info-button">
+      <button class="button" (click)="openPopup()">Подробнее</button>
+    </div>
+  </div>
+</div>

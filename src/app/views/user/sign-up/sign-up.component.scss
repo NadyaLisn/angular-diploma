@@ -1,0 +1,30 @@
+@import "../../../../assets/styles/auth-form";
+
+.signup {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  .container {
+    display: flex;
+    align-items: self-start;
+
+    .page-image {
+      margin-left: 185px;
+
+      img {
+        vertical-align: bottom;
+      }
+    }
+
+  }
+  .auth-input-error {
+    max-width: 420px;
+    .text-error {
+      margin-top: 2px;
+      color: red;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      margin-left: 10px;
+    }
+  }
+}

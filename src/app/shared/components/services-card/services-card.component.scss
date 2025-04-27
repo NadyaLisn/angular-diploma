@@ -1,0 +1,66 @@
+@import "../../../../assets/styles/variables";
+
+.services-card {
+  width: 291px;
+  height: 498px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &.service {
+    height: 498px;
+  }
+
+  .services-card-content {
+
+    .services-card-image {
+      width: 291px;
+      height: 291px;
+      border-radius: 5px;
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .services-card-title {
+      color: $blue-text-color;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 130%;
+      margin-top: 15px;
+    }
+
+    .services-card-description {
+      color: $darkblue-text-color;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 130%;
+      margin-top: 10px;
+    }
+  }
+
+  .services-card-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .services-card-info-price {
+      color: $blue-text-color;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .services-card-info-button {
+      button.button {
+        width: 163px;
+        height: 51px;
+      }
+    }
+  }
+}
