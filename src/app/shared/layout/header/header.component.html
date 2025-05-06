@@ -6,20 +6,20 @@
 
     <nav class="header-menu">
       <ul>
-        <li >
+        <li>
           <a routerLink="/" fragment="services" >Услуги</a>
         </li>
-        <li >
-          <a routerLink="/" fragment="about">О нас</a>
-        </li>
-        <li routerLinkActive="active">
-          <a routerLink="/blog">Статьи</a>
+        <li>
+          <a routerLink="/" fragment="about" >О нас</a>
         </li>
         <li >
-          <a routerLink="/" fragment="reviews">Отзывы</a>
+          <a routerLink="/blog" (click)="openPage(1)" routerLinkActive="active">Статьи</a>
         </li>
         <li >
-          <a routerLink="/" fragment="contacts">Контакты</a>
+          <a routerLink="/" fragment="reviews" >Отзывы</a>
+        </li>
+        <li >
+          <a routerLink="/" fragment="info" >Контакты</a>
         </li>
       </ul>
     </nav>

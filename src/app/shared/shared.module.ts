@@ -3,13 +3,16 @@ import {ServicesCardComponent} from './components/services-card/services-card.co
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
 import {ArticleCardComponent} from './components/article-card/article-card.component';
 import {RouterModule} from "@angular/router";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
-import { PopupOrderComponent } from './components/popups/popup-order/popup-order.component';
 import {MatDialogModule} from "@angular/material/dialog";
 
-import { PopupThanksComponent } from './components/popups/popup-thanks/popup-thanks.component';
-import { PopupConsultationComponent } from './components/popups/popup-consultation/popup-consultation.component';
+import {MatButtonModule} from "@angular/material/button";
+
+import {PopupComponent} from "./components/popup/popup.component";
+import {MatSelectModule} from "@angular/material/select";
+
+import {ClickOutsideDirective} from "./directives/click-outside.directive";
 
 
 @NgModule({
@@ -17,9 +20,8 @@ import { PopupConsultationComponent } from './components/popups/popup-consultati
     ServicesCardComponent,
     ArticleCardComponent,
     CategoryFilterComponent,
-    PopupOrderComponent,
-    PopupThanksComponent,
-    PopupConsultationComponent,
+    PopupComponent,
+
   ],
   imports: [
     NgForOf,
@@ -28,13 +30,17 @@ import { PopupConsultationComponent } from './components/popups/popup-consultati
     CommonModule,
     FormsModule,
     MatDialogModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatSelectModule,
+    ClickOutsideDirective,
 
   ],
-    exports: [
-        ServicesCardComponent,
-        ArticleCardComponent,
-        CategoryFilterComponent
-    ],
+  exports: [
+    ServicesCardComponent,
+    ArticleCardComponent,
+    CategoryFilterComponent,
+  ],
 })
 export class SharedModule {
 }

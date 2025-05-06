@@ -26,11 +26,6 @@ header.header {
           list-style: none;
           margin-right: 30px;
 
-          &.active {
-            a {
-              color: $blue-text-color;
-            }
-          }
 
           &:last-child {
             margin-right: 0;
@@ -41,8 +36,13 @@ header.header {
             font-size: 16px;
             font-weight: 500;
             color: $darkblue-text-color;
+            &.active {
+              color: $blue-text-color;
+            }
           }
+
         }
+
       }
     }
 

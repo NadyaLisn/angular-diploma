@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {PopupOrderComponent} from "../../components/popups/popup-order/popup-order.component";
+import {Subscription} from "rxjs";
+import {PopupComponent} from "../../components/popup/popup.component";
 import {MatDialog} from "@angular/material/dialog";
-import {PopupConsultationComponent} from "../../components/popups/popup-consultation/popup-consultation.component";
+
+
 
 @Component({
   selector: 'app-footer',
@@ -10,11 +12,25 @@ import {PopupConsultationComponent} from "../../components/popups/popup-consulta
 })
 export class FooterComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  isOrder: boolean = false;
+  callMeBack: boolean = true;
+  phone: string = '';
+  private subscription: Subscription | null = null;
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
-  openPopupConsultation() {
-    this.dialog.open(PopupConsultationComponent)
+  openPopupOrder(orderTitle: string, buttonText: string): void {
+    this.callMeBack = true;
+    this.isOrder = true;
+
+    this.dialog.open(PopupComponent, {
+      data: {
+        orderTitle: orderTitle,
+        callMeBack: this.callMeBack,
+        buttonText: buttonText
+      }
+    });
+
   }
 }

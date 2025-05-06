@@ -47,5 +47,8 @@ export class CategoryFilterComponent implements OnInit {
   }
 
 
+  closeFilter() {
+    this.open = false;
+  }
 
 }

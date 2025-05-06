@@ -2,6 +2,10 @@ import {Component, Input, OnInit} from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
 import {ArticleType} from "../../../types/article.type";
 import {ArticlesService} from "../../shared/services/articles.service";
+import {ActiveParamsType} from "../../../types/active-params.type";
+import {Router} from "@angular/router";
+import {PopupComponent} from "../../shared/components/popup/popup.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-main',
@@ -10,7 +14,7 @@ import {ArticlesService} from "../../shared/services/articles.service";
 })
 export class MainComponent implements OnInit {
   // @Input() article!: ArticleType;
-
+  activeParams: ActiveParamsType = {categories: []};
 
   bestArticles: ArticleType[] = [];
   banners = [
@@ -55,7 +59,29 @@ export class MainComponent implements OnInit {
         'от простой фирмы по услуге продвижения выросла в мощный блог о важности личного бренда. Класс!'
     },
   ]
+  constructor(private articlesService: ArticlesService,  private router: Router, private dialog: MatDialog) { }
+  isOrder: boolean = false;
+  callMeBack: boolean = false;
+  openPage(page: number) {
+    this.activeParams.page = page;
+    this.router.navigate(['/blog'], {
+      queryParams: this.activeParams,
+    });
+  }
 
+  openPopupOrder(orderTitle: string, buttonText: string): void {
+    this.isOrder = true;
+    this.callMeBack = true;
+
+    this.dialog.open(PopupComponent, {
+      data: {
+        orderTitle: orderTitle,
+        callMeBack: this.callMeBack,
+        buttonText: buttonText
+      }
+    });
+
+  }
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -106,7 +132,7 @@ export class MainComponent implements OnInit {
     },
     nav: false
   };
-  constructor(private articlesService: ArticlesService) { }
+
 
   ngOnInit(): void {
     this.articlesService.getBestArticles().subscribe((data:ArticleType[]) => {

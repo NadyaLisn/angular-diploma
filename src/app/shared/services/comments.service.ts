@@ -7,6 +7,7 @@ import {environment} from "../../../environments/environment";
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,12 +15,21 @@ export class CommentsService {
 
   constructor(private http: HttpClient) { }
 
-  getComments(offset: number, articleId: string): Observable<CommentsResponseType | DefaultResponseType> {
+  getComments(offset: number, id: string): Observable<CommentsResponseType | DefaultResponseType> {
     return this.http.get<CommentsResponseType | DefaultResponseType>(environment.api + 'comments', {
       params: {
         offset,
-        article: articleId
+        article: id
       }
     });
   }
+
+  addNewComment(text: string, article:string): Observable<DefaultResponseType> {
+    return this.http.post<DefaultResponseType> (environment.api + 'comments', {
+      text,
+      article
+    })
+  }
+
+
 }

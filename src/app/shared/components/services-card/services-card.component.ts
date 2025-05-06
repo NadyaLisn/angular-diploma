@@ -1,6 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
-import {PopupOrderComponent} from "../popups/popup-order/popup-order.component";
+import {PopupComponent} from "../popup/popup.component";
+import {Subscription} from "rxjs";
+
 
 @Component({
   selector: 'services-card',
@@ -35,12 +37,30 @@ export class ServicesCardComponent implements OnInit {
     },
   ];
 
-  constructor(public dialog: MatDialog,) {
+
+  constructor(private dialog: MatDialog) {
   }
 
-  openPopup() {
-    this.dialog.open(PopupOrderComponent)
+  isOrder: boolean = false;
+  callMeBack: boolean = false;
+  private subscription: Subscription = new Subscription;
+
+  openPopupOrder(orderTitle: string, optionTitle: string, buttonText: string): void {
+    this.isOrder = true;
+    this.callMeBack = false;
+
+    this.dialog.open(PopupComponent, {
+      data: {
+        orderTitle: orderTitle,
+        optionTitle: optionTitle,
+        isCallMeBack: this.callMeBack,
+        buttonText: buttonText
+      }
+    });
+
   }
+
+
   ngOnInit(): void {
   }
 

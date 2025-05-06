@@ -11,11 +11,13 @@ import {SharedModule} from "./shared/shared.module";
 import {MainComponent} from './views/main/main.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CarouselModule} from "ngx-owl-carousel-o";
-import { HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 
 import {MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS} from "@angular/material/snack-bar";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatMenuModule} from "@angular/material/menu";
+import {AuthInterceptor} from "./core/auth/auth.interceptor";
+
 
 
 
@@ -26,6 +28,7 @@ import {MatMenuModule} from "@angular/material/menu";
     HeaderComponent,
     FooterComponent,
     MainComponent,
+
 
   ],
     imports: [
@@ -42,6 +45,7 @@ import {MatMenuModule} from "@angular/material/menu";
     ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

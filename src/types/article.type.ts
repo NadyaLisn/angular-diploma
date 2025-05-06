@@ -10,7 +10,6 @@ export type ArticleType = {
 
 }
 
-
 export type ArticlesType = {
   count: number,
   pages: number,

@@ -24,7 +24,7 @@
                 <div *ngIf="banner.description" class="main-banner-description">{{banner.description}}</div>
               </div>
               <div class="main-banner-button">
-                <button class="button" >Подробнее</button>
+                <button class="button" (click)="openPopupOrder('Заявка на услугу',  'Оставить заявку')">Подробнее</button>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@
     </div>
     <div class="best-articles-link">
       <a>
-        <span routerLink="/blog">Перейти в блог</span>
+        <span routerLink="/blog" (click)="openPage(1)">Перейти в блог</span>
         <svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
              xmlns:xlink="http://www.w3.org/1999/xlink">
           <rect id="Аrrow" width="16.000000" height="16.000000"
@@ -159,7 +159,7 @@
 </section>
 
 
-<section class="info" id="info" #infoElement>
+<section class="info" id="info">
   <div class="container">
     <div class="map">
       <iframe

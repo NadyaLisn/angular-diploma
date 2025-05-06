@@ -5,7 +5,10 @@ import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {CategoriesType} from "../../../types/categories.type";
 import {ActiveParamsType} from "../../../types/active-params.type";
-import {ArticleBodyType} from "../../../types/article-body.type";
+
+import {UserRequestType} from "../../../types/user-request.type";
+import {DefaultResponseType} from "../../../types/default-response.type";
+import {ArticleTextType} from "../../../types/article-text.type";
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +26,12 @@ export class ArticlesService {
       params: params
     });
   }
-  getArticle(url: string): Observable<ArticleBodyType> {
-    return this.http.get<ArticleBodyType>(environment.api + 'articles/' + url);
+  getArticle(url: string): Observable<ArticleTextType> {
+    return this.http.get<ArticleTextType>(environment.api + 'articles/' + url);
+  }
+
+  addUserRequest(userRequest: UserRequestType): Observable<DefaultResponseType> {
+    return this.http.post<DefaultResponseType>(environment.api + 'requests', userRequest);
   }
   getCategoriesArticles(): Observable<CategoriesType[]> {
     return this.http.get<CategoriesType[]>(environment.api + 'categories');

@@ -1,6 +1,6 @@
 import {CommentType} from "./comments-response.type";
 
-export type ArticleBodyType = {
+export type ArticleTextType = {
   text: string,
   comments: CommentType[],
   commentsCount: number,
