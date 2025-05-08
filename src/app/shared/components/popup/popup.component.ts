@@ -1,8 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { PopupDataType } from 'src/types/popup-data.interface';
-
-
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Subscription } from 'rxjs';
 import {DefaultResponseType} from "../../../../types/default-response.type";

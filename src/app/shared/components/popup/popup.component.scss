@@ -9,10 +9,6 @@
   justify-content: center;
   flex-direction: column;
 
-  //&.hide {
-  //  display: none;
-  //}
-
   .popup-close {
     position: absolute;
     right: 0;
@@ -41,7 +37,6 @@
         font-family: 'Montserrat', sans-serif;
         font-size: 14px;
         font-weight: 400;
-
       }
 
       margin-bottom: 5px;
@@ -54,9 +49,7 @@
       font-size: 14px;
       font-weight: 400;
       text-align: left;
-
     }
-
 
     .popup-input {
       width: 422px;

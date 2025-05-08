@@ -97,6 +97,7 @@
               font-size: 14px;
               font-weight: 400;
               margin-bottom: 40px;
+              color: $darkblue-text-color;
 
               a {
                 color: $blue-text-color;
@@ -129,79 +130,12 @@
               button.button {
                 width: 422px;
                 height: 51px;
+                margin-top: 0px;
               }
             }
 
             .article-comments-items {
               padding-top: 20px;
-
-              .article-comments-item {
-                margin-top: 40px;
-                .article-comment {
-                  display: flex;
-                  align-items: flex-start;
-
-                  .article-comment-icon {
-                    width: 60px;
-                    height: 60px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 2px solid $blue-text-color;
-                    border-radius: 50%;
-                    background-color: #B9D5FD;
-                    margin-right: 26px;
-                  }
-
-                  .article-comment-title {
-                    font-family: 'Montserrat', sans-serif;
-                    font-weight: 600;
-
-                    .article-comment-name {
-                      color: $blue-text-color;
-                      font-size: 18px;
-                      margin-bottom: 10px;
-                    }
-
-                    .article-comment-date {
-                      color: rgb(190, 190, 190);
-                      font-size: 14px;
-                    }
-                  }
-                }
-                .article-comment-text {
-                  padding: 15px 0 40px;
-                  color: $darkblue-text-color;
-                  font-family: 'Montserrat', sans-serif;
-                  font-size: 14px;
-                  font-weight: 400;
-                }
-                .article-comment-likes {
-                  color: $darkblue-text-color;
-                  font-family: 'Montserrat', sans-serif;
-                  font-size: 14px;
-                  font-weight: 600;
-                  display: flex;
-                  align-items: center;
-
-                  a {
-                    margin-right: 15px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
-
-                    span {
-                      margin-right: 2px;
-                    }
-
-                  }
-
-                }
-              }
-
-
-
 
               .article-comments-load {
                 color: rgb(112, 159, 220);
@@ -210,7 +144,7 @@
                 font-weight: 500;
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                //justify-content: center;
                 cursor: pointer;
 
                 span {

@@ -13,15 +13,19 @@ import {PopupComponent} from "./components/popup/popup.component";
 import {MatSelectModule} from "@angular/material/select";
 
 import {ClickOutsideDirective} from "./directives/click-outside.directive";
+import {DateCommentPipe} from "./pipes/date-comment.pipe";
 
 
+import {LoaderComponent} from "./components/loader/loader.component";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 @NgModule({
   declarations: [
     ServicesCardComponent,
     ArticleCardComponent,
     CategoryFilterComponent,
     PopupComponent,
-
+    DateCommentPipe,
+    LoaderComponent
   ],
   imports: [
     NgForOf,
@@ -34,12 +38,15 @@ import {ClickOutsideDirective} from "./directives/click-outside.directive";
     MatButtonModule,
     MatSelectModule,
     ClickOutsideDirective,
+    MatProgressSpinnerModule
 
   ],
   exports: [
     ServicesCardComponent,
     ArticleCardComponent,
     CategoryFilterComponent,
+    DateCommentPipe,
+    LoaderComponent
   ],
 })
 export class SharedModule {

@@ -13,6 +13,9 @@ import {CommentsResponseType, CommentType} from "../../../../types/comments-resp
 import {FormBuilder, NgForm} from "@angular/forms";
 import {ArticleTextType} from "../../../../types/article-text.type";
 import {HttpErrorResponse} from "@angular/common/http";
+import {ActionEnum} from "../../../../types/action.enum";
+import {ActionsType} from "../../../../types/actions.type";
+
 
 
 @Component({
@@ -33,6 +36,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
   };
   accessToken: string | null = null;
   private subscription: Subscription = new Subscription();
+  articleCommentsReactions: ActionsType [] = []
 
   constructor(private articleService: ArticlesService, private router: Router,
               private activatedRoute: ActivatedRoute,
@@ -69,6 +73,15 @@ export class ArticleComponent implements OnInit, OnDestroy {
               this.comments = data.comments;
               // this.commentsService.getComments(data.comments.length, data.id).subscribe()
               // this.getCommentsArticle()
+              if (this.isLogged) {
+                this.commentsService.getArticleCommentsReactions(this.article.id)
+                  .subscribe(data => {
+                    if ((data as DefaultResponseType).error) {
+                      throw new Error((data as DefaultResponseType).message)
+                    }
+                    this.articleCommentsReactions = data as ActionsType []
+                  })
+              }
             });
 
           this.articleService.getRelatedArticles(params['url'])
@@ -126,10 +139,47 @@ export class ArticleComponent implements OnInit, OnDestroy {
           this.commentCountOnPage++;
         },
         error: (error) => {
-          this._snackBar.open(error.error.message)
+          console.log(error.error.message);
         }
       })
     )
+  }
+
+  changeReaction(event: { commentId: string, reaction: ActionEnum | null }) {
+    if (this.isLogged) {
+      this.comments.forEach(itemComment => {
+        if (itemComment.id === event.commentId) {
+          const oldReaction: ActionsType  | undefined = this.articleCommentsReactions.find(item => item.comment === event.commentId);
+          if (oldReaction) {
+            if (event.reaction && event.reaction === ActionEnum.like && oldReaction.action === ActionEnum.dislike) {
+              itemComment.likesCount++
+              itemComment.dislikesCount--
+            } else if (event.reaction && event.reaction === ActionEnum.dislike && oldReaction.action === ActionEnum.like) {
+              itemComment.dislikesCount++
+              itemComment.likesCount--
+            } else if (!event.reaction && oldReaction.action === ActionEnum.dislike) {
+              itemComment.dislikesCount--
+            } else if (!event.reaction && oldReaction.action === ActionEnum.like) {
+              itemComment.likesCount--
+            }
+          } else {
+            if (event.reaction && event.reaction === ActionEnum.like) {
+              itemComment.likesCount++
+            } else if (event.reaction && event.reaction === ActionEnum.dislike) {
+              itemComment.dislikesCount++
+            }
+          }
+          this.subscription.add(this.commentsService.getArticleCommentsReactions(this.article.id)
+            .subscribe(data => {
+              if ((data as DefaultResponseType).error) {
+                throw new Error((data as DefaultResponseType).message)
+              }
+              this.articleCommentsReactions = data as ActionsType []
+            })
+          )
+        }
+      })
+    }
   }
 
 }

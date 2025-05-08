@@ -49,7 +49,6 @@ export class HeaderComponent implements OnInit {
       }
     })
   }
-
   doLogout(): void {
     this.authService.removeTokens();
     this.authService.userId = null;
@@ -67,6 +66,11 @@ export class HeaderComponent implements OnInit {
           this.doLogout();
         }
       })
+  }
+  scrollTo(fragment: string) {
+    setTimeout(() => {
+      document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
+    });
   }
 
 }

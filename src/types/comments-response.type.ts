@@ -12,7 +12,8 @@ export  type CommentType = {
   dislikesCount: number,
   user: {
     id: string,
-    name: string
+    name: string,
+    reaction?: "like" | "dislike"
   }
 
 }

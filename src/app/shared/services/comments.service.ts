@@ -1,9 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {CommentsResponseType} from "../../../types/comments-response.type";
 import {DefaultResponseType} from "../../../types/default-response.type";
 import {environment} from "../../../environments/environment";
+import {UserActionsType} from "../../../types/user-actions.type";
+import {ActionsType} from "../../../types/actions.type";
+import {ActionEnum} from "../../../types/action.enum";
 
 
 
@@ -32,4 +35,19 @@ export class CommentsService {
   }
 
 
+  getReactionComment(commentId: string): Observable<ActionsType [] | DefaultResponseType> {
+    return this.http.get<ActionsType [] | DefaultResponseType>(environment.api + 'comments/' + commentId + '/actions');
+  }
+  getArticleCommentsReactions(articleId: string): Observable<ActionsType [] | DefaultResponseType> {
+    return this.http.get<ActionsType [] | DefaultResponseType>(environment.api + 'comments/article-comment-actions', {
+      params: {
+        articleId
+      }
+    });
+  }
+  sendReaction(reaction: string, articleId: string): Observable<DefaultResponseType> {
+    return this.http.post<DefaultResponseType>(environment.api + 'comments/' + articleId + '/apply-action', {
+      action: reaction
+    })
+  }
 }

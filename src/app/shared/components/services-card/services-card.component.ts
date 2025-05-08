@@ -59,8 +59,6 @@ export class ServicesCardComponent implements OnInit {
     });
 
   }
-
-
   ngOnInit(): void {
   }
 

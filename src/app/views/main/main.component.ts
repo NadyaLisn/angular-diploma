@@ -22,19 +22,22 @@ export class MainComponent implements OnInit {
       title1: 'Предложение месяца',
       title2: 'Продвижение в Instagram для вашего бизнеса <span class="text-blue-color">-15%</span>!',
       image: 'banner-1.png',
-      description: ''
+      description: '',
+      optionTitle: 'Продвижение'
     },
     {
       title1: 'Акция',
       title2: 'Нужен грамотный <span class="text-blue-color">копирайтер</span>?',
       image: 'banner-2.png',
       description: 'Весь декабрь у нас действует акция на работу копирайтера.',
+      optionTitle: 'Копирайтинг'
     },
     {
       title1: 'Новость дня',
       title2: '<span class="text-blue-color">6 место</span> в ТОП-10 SMM-агенств Москвы!',
       image: 'banner-3.png',
       description: 'Мы благодарим каждого, кто голосовал за нас!',
+      optionTitle: 'Продвижение'
     },
   ];
 
@@ -69,14 +72,15 @@ export class MainComponent implements OnInit {
     });
   }
 
-  openPopupOrder(orderTitle: string, buttonText: string): void {
+  openPopupOrder(orderTitle: string, optionTitle: string, buttonText: string): void {
     this.isOrder = true;
-    this.callMeBack = true;
+    this.callMeBack = false;
 
     this.dialog.open(PopupComponent, {
       data: {
         orderTitle: orderTitle,
-        callMeBack: this.callMeBack,
+        optionTitle: optionTitle,
+        isCallMeBack: this.callMeBack,
         buttonText: buttonText
       }
     });

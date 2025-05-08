@@ -24,7 +24,7 @@
                 <div *ngIf="banner.description" class="main-banner-description">{{banner.description}}</div>
               </div>
               <div class="main-banner-button">
-                <button class="button" (click)="openPopupOrder('Заявка на услугу',  'Оставить заявку')">Подробнее</button>
+                <button class="button" (click)="openPopupOrder('Заявка на услугу', banner.optionTitle, 'Оставить заявку')">Подробнее</button>
               </div>
             </div>
           </div>
